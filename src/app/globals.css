@@ -1,0 +1,53 @@
+/* Tailwind v4 requires this import instead of the old @tailwind directives */
+@import "tailwindcss";
+
+/* Pure CSS approach to avoid compiler errors */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border-radius: 1.5rem;
+}
+
+.glass-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  outline: none;
+  transition: all 0.3s ease;
+  color: #1e293b;
+}
+
+.glass-input::placeholder {
+  color: #64748b;
+}
+
+.glass-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+body {
+  margin: 0;
+  /* Ambient animated mesh gradient */
+  background: linear-gradient(-45deg, #e2e8f0, #cffafe, #e0e7ff, #f8fafc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #0f172a;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
